@@ -1,0 +1,12 @@
+<h1>Yelp Matches</h1>
+
+
+<div class="container">
+	<% @results.businesses.each do |business| %>
+    <ul>
+      <li><h3><%= business.name %><h3></li>
+      <li>Rating:&nbsp;&nbsp;&nbsp; <%= business.rating %></li>
+      <li>Address: <%= business.location.address[0] %></li>
+    </ul>
+	<% end %>
+</div>

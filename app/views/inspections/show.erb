@@ -1,0 +1,16 @@
+<h1>Chicago Food Inspection Matches</h1>
+
+<div class="container">
+  <% @chi_results.each do |restaurant| %>
+    <ul>
+
+      <li><h3><a href="/yelp?name=<%=restaurant.aka_name%>&lat=<%=restaurant.latitude%>&lon=<%=restaurant.longitude%>"><%= restaurant.aka_name %></a><h3></li>
+      <li>Address:&nbsp;&nbsp;&nbsp; <%= restaurant.address %></li>
+      <li>Rating:&nbsp;&nbsp;&nbsp; <%= restaurant.risk %></li>
+      <li>Results:&nbsp;&nbsp;&nbsp; <%= restaurant.results %></li>
+      <li>Inspection Date:&nbsp;&nbsp;&nbsp; <%= restaurant.inspection_date[0..9] %></li>
+      <li>  <p><h5>Dare to read the full report:</h5><%= restaurant.violations %>
+      </p></li>
+    </ul>
+  <% end %>
+</div>
