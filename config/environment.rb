@@ -14,8 +14,6 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-require 'bcrypt'
-require 'faker'
 
 require 'oauth'
 require 'json'
@@ -26,6 +24,9 @@ require 'httparty'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+
+require 'dotenv'
+Dotenv.load
 
 require 'erb'
 

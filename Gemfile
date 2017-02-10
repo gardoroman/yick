@@ -12,7 +12,7 @@ gem 'activerecord'
 gem 'bcrypt'
 
 gem 'rake'
-gem 'yelp'
+gem 'yelp', require: 'yelp'
 gem 'json'
 gem 'oauth'
 gem 'httparty'

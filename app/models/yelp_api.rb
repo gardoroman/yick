@@ -1,4 +1,24 @@
-class YelpController
+class YelpApi
+
+  def initialize
+    @client = Yelp::Client.new({
+      consumer_key: ENV['YELP_CONSUMER_KEY'],
+      consumer_secret: ENV['YELP_CONSUMER_SECRET'],
+      token: ENV['YELP_TOKEN'],
+      token_secret: ENV['YELP_TOKEN_SECRET']
+      })
+
+  end
+
+  # The Yelp API allows for a more generous and relevant lookup
+  # of restaurant names
+  def formatted_name(name)
+    puts "In yelp api helper"
+    params = {term: name, limit: 1}
+    results = @client.search("Chicago", params)
+    results.businesses[0].name.upcase
+  end
+
   def find_matches(location, search_term)
     # client = Yelp::Client.new({ consumer_key: '',
     #                             consumer_secret: '',
@@ -11,22 +31,8 @@ class YelpController
                limit: 20
              }
 
-    #  params = { term: "Rosatti's Pizza",
-    #             # name: "5544 N MILWAUKEE AVE",
-    #             limit: 20
-    #           }
-    # coordinates = {latitude: 41.9028, longitude: -87.6953}
-    # results = client.search_by_coordinates(coordinates, params)
-    # puts "\n\n\n\n#{x}"
 
-    client = Yelp::Client.new({
-      consumer_key: ENV['YELP_CONSUMER_KEY'],
-      consumer_secret: ENV['YELP_CONSUMER_SECRET'],
-      token: ENV['YELP_TOKEN'],
-      token_secret: ENV['YELP_TOKEN_SECRET']
-      })
-
-    results = client.search(location.capitalize, params)
+    results = @client.search(location.capitalize, params)
     puts results
 
     results.businesses.each do |business|
