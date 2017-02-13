@@ -13,7 +13,6 @@ class YelpApi
   # The Yelp API allows for a more generous and relevant lookup
   # of restaurant names
   def formatted_name(name)
-    puts "In yelp api helper"
     params = {term: name, limit: 1}
     results = @client.search("Chicago", params)
     results.businesses[0].name.upcase

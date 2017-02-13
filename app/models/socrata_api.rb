@@ -8,7 +8,7 @@ class SocrataApi
 
   def find_matches(name)
     formatted_name = yelp_lookup(name)
-    results = @client.get("4ijn-s7e5", {:aka_name => formatted_name, :$limit => 5})
+    results = @client.get("4ijn-s7e5", {:aka_name => formatted_name, :$limit => 10})
   end
 
   private
