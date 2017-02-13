@@ -7,7 +7,9 @@ end
 
 
 post '/reports' do
-  cfi = ChiFoodInspect.new
-  @chi_results = cfi.find_matches(params[:name])
+  # cfi = ChiFoodInspect.new
+
+  socrata = SocrataApi.new
+  @chi_results = socrata.find_matches(params[:name])
   erb :"/inspections/show"
 end
