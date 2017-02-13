@@ -1,5 +1,7 @@
 class YelpApi
 
+  attr_accessor :client
+
   def initialize
     @client = Yelp::Client.new({
       consumer_key: ENV['YELP_CONSUMER_KEY'],
@@ -18,28 +20,4 @@ class YelpApi
     results.businesses[0].name.upcase
   end
 
-  def find_matches(location, search_term)
-    # client = Yelp::Client.new({ consumer_key: '',
-    #                             consumer_secret: '',
-    #                             token: '',
-    #                             token_secret: ''
-    #                           })
-
-    params = { term: search_term,
-               # name: "5544 N MILWAUKEE AVE",
-               limit: 20
-             }
-
-
-    results = @client.search(location.capitalize, params)
-    puts results
-
-    results.businesses.each do |business|
-      puts business.name
-      puts business.rating
-      puts business.location.address
-    end
-
-    return results
-  end
 end
