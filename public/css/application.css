@@ -1,8 +1,46 @@
+input[placeholder] {
+  font-size: 25px;
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 2px dashed #0000cc;
+  /*border: 2px dashed #0000cc;*/
+}
+
+.tag-line {
+  /*color: red;*/
+  font-style: italic;
+  font-weight: lighter;
+}
+
+ul {
+  list-style-type: none;
+  list-style: none;
+}
+
+.btn {
+  color:red;
+}
+
+.content {
+  margin-top: 100px;
+}
+
+.search {
+  color: gray;
+}
+
+.logo{
+  width:500px;
+  height:150px;
+  padding:0;
+  margin: 0 auto;
+  background-color: red;
+  /*margin-bottom:0;*/
+  background:url("/images/yick_red_back.jpg");
+  background-size:500px 150px;
 }
 
 nav {
@@ -31,4 +69,8 @@ nav ul li {
 
 .inline {
   display: inline;
+}
+
+h5 {
+  color: red;
 }
