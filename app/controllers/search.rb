@@ -6,10 +6,10 @@ get '/yelp' do
 end
 
 
-post '/reports' do
+post '/search' do
   # cfi = ChiFoodInspect.new
 
   socrata = SocrataApi.new
-  @chi_results = socrata.find_matches(params[:name])
+  @restaurants = socrata.find_matches(params[:name])
   erb :"/inspections/show"
 end

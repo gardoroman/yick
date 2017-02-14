@@ -11,9 +11,9 @@ class SocrataApi
   def find_matches(name)
     formatted_name = yelp_lookup(name)
     results = @client.get("4ijn-s7e5", {:aka_name => formatted_name, :$limit => 10})
-    restaurants = Report.new(results)
-    restaurants.create_report_data(@yelp_client)
+    report = Report.new(results)
     results
+    restaurants = report.create_report_data(@yelp_client)
   end
 
   private

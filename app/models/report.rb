@@ -20,8 +20,9 @@ class Report
       restaurant_hash = Hash.new
       restaurant_hash[:name] = inspection.aka_name
       restaurant_hash[:inspection_date] = inspection.inspection_date
+      restaurant_hash[:results] = inspection.results
+      restaurant_hash[:risk] = inspection.risk
       restaurant_hash[:address] = inspection.address
-      restaurant_hash[:result] = inspection.results
       restaurant_hash[:violations] = inspection.violations
       coordinates = {latitude: inspection.location.latitude, longitude: inspection.location.longitude}
       params = {term: inspection.aka_name, limit: 1}
@@ -30,11 +31,9 @@ class Report
       restaurant_hash[:yelp_url] = yelp_result.businesses[0].url
       restaurants << restaurant_hash
     end
-    restaurants.each do |res|
-      puts "\n\n\n***************************"
-      puts res
-    end
-
+    puts "\n\n\n********************this thing is a "
+    puts restaurants[0]
+    restaurants
   end
 
 end
