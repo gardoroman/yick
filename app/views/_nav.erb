@@ -1,14 +1,10 @@
-<header>
-	<nav>
-		<ul>
-		<li><a href="/">home</a></li>
-			<% if logged_in? %>
-			<li><a href="/users/<%=current_user.id%>"><%= current_user.username%>: <%= current_user.id%></a></li>
-			<li><a href="/logout">logout</a></li>
-			<% else %>
-			<li><a href="/users/new">register</a></li>
-			<li><a href="/login/new">login</a></li>
-			<% end %>
+<nav class="red darken-3">
+	<div class="nav-wrapper" >
+		<a href="/" class="brand-logo">Yick</a>
+		<!-- <a href="/" class="brand-logo left"><img class="logo" src="/images/yick_red_back_nav.png" alt="logo"/></a> -->
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="https://www.yelp.com/chicago" class="yick-link" target="_blank">Yelp</a></li>
+			<li><a href="https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/data" class="yick-link" target="_blank">City of Chicago </a></li>
 		</ul>
-	</nav>
-</header>
+</div>
+</nav>

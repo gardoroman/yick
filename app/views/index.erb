@@ -1,10 +1,25 @@
 <h3 class="tag-line"></h3>
-<div class="content">
-  <form class="search" method="post" action="/search">
-    <h5> Let's Inspect </h5>
-    <div class="input-field col s6">
-          <input placeholder="Enter name of restaurant" type="text" name="name">
+
+  <div class="row">
+    <div class="col s3 m4">
+      <div class="card pink lighten-3">
+        <div class="card-content white-text">
+          <span class="card-title">Purpose</span>
+          <p>This app looks up Chicago Area restaurants in Yelp
+            and checks them against the City of Chicago Food Inspection data.
+            If the results returns nothing, then no violations have been reported.
+          </p>
         </div>
-    <input class="btn" type="submit" value="Search Restaurant">
-  </form>
+      </div>
+    </div>
+    <div class="col s9 m8">
+      <h5>Enter the name of the restaurant </h5>
+      <form class="search" method="post" action="/search">
+        <input placeholder="Restaurant" type="text" name="name">
+        <button class="btn red waves-effect waves-green" type="submit" name="action">Search
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

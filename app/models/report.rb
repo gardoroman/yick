@@ -31,8 +31,6 @@ class Report
       restaurant_hash[:yelp_url] = yelp_result.businesses[0].url
       restaurants << restaurant_hash
     end
-    puts "\n\n\n********************this thing is a "
-    puts restaurants[0]
     restaurants
   end
 
